@@ -34,16 +34,16 @@ def send_666_to_12306():
     print('Test send 666 to 12306...')
     gsm.sms.send('12306','666')
 
-import json,requests # callback: telegram api
-def telegram_notify(msg):
-    url = "https://maker.ifttt.com/trigger/recolxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    payload = {
-        "value1": msg
-    }
-    headers = {
-        "Content-Type": "application/json"
-    }
-    requests.post(url, data=json.dumps(payload), headers=headers)
+# import json,requests # callback: telegram api
+# def telegram_notify(msg):
+#     url = "https://maker.ifttt.com/trigger/recolxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+#     payload = {
+#         "value1": msg
+#     }
+#     headers = {
+#         "Content-Type": "application/json"
+#     }
+#     requests.post(url, data=json.dumps(payload), headers=headers)
 
 import web
 
