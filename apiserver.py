@@ -1,4 +1,4 @@
-# pip3 install web.py smartrent.py
+# pip3 install web.py
 # 
 # Run this program like: python this.py 30801
 # Usage: curl "http://localhost:30801/mO0c7JlqE1n5r/smsget"

@@ -12,6 +12,8 @@ python3
 
 python usim800 module (please clone from github: <https://github.com/Bhagyarsh/usim800> . pip release is too old)
 
+pip install web.py
+
 ## how to use
 
 ### step 1 - test if your SIM800 module is working
