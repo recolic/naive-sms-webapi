@@ -1,0 +1,20 @@
+from ubuntu:22.04
+label org.opencontainers.image.authors="docker.pub@me.recolic.net"
+
+arg DEBIAN_FRONTEND=noninteractive
+arg R_SEC_HMSAPI_KEY=PleaseChangeMe
+run apt update && apt install -y python3 python3-pip wget
+# For sms-remote-access, requires --device=/dev/ttyUSB0
+run pip install web.py usim800
+# # For door-watchdog, requires --device=/dev/tty0
+# run pip install smartrent pytz 
+
+copy apiserver.py /
+run sed -i s/_PLACEHOLDER_APIKEY_/${R_SEC_HMSAPI_KEY}/g /apiserver.py
+
+# Download latest version of usim800, not published to pip yet
+run wget https://raw.githubusercontent.com/Bhagyarsh/usim800/master/usim800/Sms/sms.py -O /tmp/sms.py && \
+    find /usr -name sms.py -exec cp /tmp/sms.py '{}' ';'
+
+cmd python3 /apiserver.py 30801
+

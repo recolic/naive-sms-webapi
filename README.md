@@ -33,7 +33,3 @@ curl "http://localhost:8080/mO0c7JlqE1n5r/smsget"
 curl "http://localhost:8080/mO0c7JlqE1n5r/smsdel"
 ```
 
-
-
-
-
